@@ -1,0 +1,129 @@
+﻿<Page
+    x:Class="BaHotHManager.Views.Gameplay"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BaHotHManager.Views"
+    xmlns:models="using:BaHotHManager.Models"
+    xmlns:viewmodels="using:BaHotHManager.ViewModels"
+    xmlns:controls="using:BaHotHManager.Helpers"
+    xmlns:uwptoolkit="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <controls:DateConverter x:Key="DateConverter" />
+    </Page.Resources>
+    <Page.TopAppBar>
+        <CommandBar>
+            <AppBarButton Icon="ContactInfo" Label="Apply Effect">
+                <AppBarButton.Flyout>
+                    <Flyout x:Name="ApplyEffectFlyout" Placement="Full" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="5*" />
+                                <RowDefinition Height="4*"/>
+                                <RowDefinition  />
+                            </Grid.RowDefinitions>
+                            <ListView x:Name="AffectedPlayers" Grid.Row="0" ItemsSource="{x:Bind ViewModel.Game.PlayOrder, Mode=OneWay}" Loaded="AffectedPlayers_Loaded" IsMultiSelectCheckBoxEnabled="False" SelectionMode="Multiple">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate x:DataType="models:Player">
+                                        <TextBlock Text="{x:Bind Name}" />
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                            <VariableSizedWrapGrid MaximumRowsOrColumns="2" Grid.Row="1" Orientation="Horizontal">
+                                <StackPanel>
+                                    <TextBlock>
+                                        Speed
+                                    </TextBlock>
+                                    <uwptoolkit:RadialGauge x:Name="SpeedEffect" IsInteractive="True" Minimum="-9" Maximum="8" Value="0" NeedleWidth="1" TickWidth="0" TickLength="0"></uwptoolkit:RadialGauge>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock>
+                                        Might
+                                    </TextBlock>
+                                    <uwptoolkit:RadialGauge x:Name="MightEffect" IsInteractive="True" Minimum="-9" Maximum="8" Value="0" NeedleWidth="1" TickWidth="0" TickLength="0"></uwptoolkit:RadialGauge>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock>
+                                        Knowledge
+                                    </TextBlock>
+                                    <uwptoolkit:RadialGauge x:Name="KnowledgeEffect" IsInteractive="True" Minimum="-9" Maximum="8" Value="0" NeedleWidth="1" TickWidth="0" TickLength="0"></uwptoolkit:RadialGauge>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock>
+                                        Sanity
+                                    </TextBlock>
+                                    <uwptoolkit:RadialGauge x:Name="SanityEffect" IsInteractive="True" Minimum="-9" Maximum="8" Value="0" NeedleWidth="1" TickWidth="0" TickLength="0"></uwptoolkit:RadialGauge>
+                                </StackPanel>
+                            </VariableSizedWrapGrid>
+                            <Button HorizontalAlignment="Center" Content="Apply" Grid.Row="2" Click="ApplyEffect" />
+                        </Grid>
+                    </Flyout>
+                </AppBarButton.Flyout>
+            </AppBarButton>
+            <AppBarButton Icon="Save" Label="Save&#160;Game" Click="SaveGameAsync" />
+            <AppBarButton Icon="Forward" Label="Next&#160;Player" Click="NextTurn" />
+            <CommandBar.Content>
+                <AppBarButton Icon="ShowBcc" Click="TogglePane"/>
+            </CommandBar.Content>
+        </CommandBar>
+    </Page.TopAppBar>
+    <SplitView x:Name="splitter">
+        <SplitView.Pane>
+            <ListView x:Name="SaveGames" SelectionMode="Multiple" IsMultiSelectCheckBoxEnabled="False" ItemsSource="{x:Bind ViewModel.SaveGames, Mode=OneWay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="viewmodels:GameplayViewModel" >
+                        <TextBlock>
+                            <Run Text="{x:Bind}" />
+                            <LineBreak />
+                            <Run Text="{x:Bind LastSavedDate, Converter={StaticResource DateConverter}, ConverterParameter='MMMM dd yyyy'}" />
+                        </TextBlock>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </SplitView.Pane>
+        <ScrollViewer Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" VerticalScrollMode="Auto">
+            <ItemsControl ItemsSource="{x:Bind ViewModel.Game.PlayOrder, Mode=OneWay}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate x:DataType="models:Player">
+                        <StackPanel>
+                            <TextBlock Grid.Row="0">
+                            <Run Text="{x:Bind Name, Mode=OneWay}" />
+                            <LineBreak />
+                            <Run Text="{x:Bind Character.Name, Mode=OneWay}"/>
+                            </TextBlock>
+                            <controls:EqualStackPanel Grid.Row="1" Orientation="Horizontal">
+                                <StackPanel>
+                                    <TextBlock>Speed</TextBlock>
+                                    <ProgressBar Minimum="0" Maximum="9" Value="{x:Bind Character.SpeedPosition, Mode=OneWay}" />
+                                    <TextBlock Text="{x:Bind Character.Speed, Mode=OneWay}"></TextBlock>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock>Might</TextBlock>
+                                    <ProgressBar Minimum="0" Maximum="9" Value="{x:Bind Character.MightPosition, Mode=OneWay}" />
+                                    <TextBlock Text="{x:Bind Character.Might, Mode=OneWay}"></TextBlock>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock>Sanity</TextBlock>
+                                    <ProgressBar Minimum="0" Maximum="9" Value="{x:Bind Character.SanityPosition, Mode=OneWay}" />
+                                    <TextBlock Text="{x:Bind Character.Sanity, Mode=OneWay}"></TextBlock>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock>Knowledge</TextBlock>
+                                    <ProgressBar Minimum="0" Maximum="9" Value="{x:Bind Character.KnowledgePosition, Mode=OneWay}" />
+                                    <TextBlock Text="{x:Bind Character.Knowledge, Mode=OneWay}"></TextBlock>
+                                </StackPanel>
+                            </controls:EqualStackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <controls:EqualStackPanel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </ScrollViewer>
+    </SplitView>
+</Page>

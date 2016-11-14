@@ -1,0 +1,190 @@
+﻿{
+  "CharacterTypes": [
+    {
+      "Color": "White",
+      "Characters": [
+        {
+          "Name": "Professor Longfellow",
+          "Birthday": "07/27/2016",
+          "Color": "White",
+          "SpeedValues": [ 0, 2, 2, 4, 4, 5, 5, 6, 6 ],
+          "SpeedPosition": 4,
+          "MightValues": [ 0, 1, 2, 3, 4, 5, 5, 6, 6 ],
+          "MightPosition": 3,
+          "SanityValues": [ 0, 1, 3, 3, 4, 5, 5, 6, 7 ],
+          "SanityPosition": 3,
+          "KnowledgeValues": [ 0, 4, 5, 5, 5, 5, 6, 7, 8 ],
+          "KnowledgePosition": 5
+        },
+        {
+          "Name": "Father Rhinehardt",
+          "Birthday": "04/29/2016",
+          "Color": "White",
+          "SpeedValues": [ 0, 2, 3, 3, 4, 5, 6, 7, 7 ],
+          "SpeedPosition": 3,
+          "MightValues": [ 0, 1, 2, 2, 4, 4, 5, 5, 7 ],
+          "MightPosition": 3,
+          "SanityValues": [ 0, 3, 4, 5, 5, 6, 7, 7, 8 ],
+          "SanityPosition": 5,
+          "KnowledgeValues": [ 0, 1, 3, 3, 4, 5, 6, 6, 8 ],
+          "KnowledgePosition": 4
+        }
+      ]
+    },
+    {
+      "Color": "Red",
+      "Characters": [
+        {
+          "Name": "Darrin 'Flash' Williams",
+          "Birthday": "06/06/2016",
+          "Color": "Red",
+          "SpeedValues": [ 0, 4, 4, 4, 5, 6, 7, 7, 8 ],
+          "SpeedPosition": 5,
+          "MightValues": [ 0, 2, 3, 3, 4, 5, 6, 6, 7 ],
+          "MightPosition": 3,
+          "SanityValues": [ 0, 1, 2, 3, 4, 5, 5, 5, 7 ],
+          "SanityPosition": 3,
+          "KnowledgeValues": [ 0, 2, 3, 3, 4, 5, 5, 5, 7 ],
+          "KnowledgePosition": 3
+        },
+        {
+          "Name": "Ox Bellows",
+          "Birthday": "10/10/2016",
+          "Color": "Red",
+          "SpeedValues": [ 0, 2, 2, 2, 3, 4, 5, 5, 6 ],
+          "SpeedPosition": 5,
+          "MightValues": [ 0, 4, 5, 5, 6, 6, 7, 8, 8 ],
+          "MightPosition": 3,
+          "SanityValues": [ 0, 2, 2, 3, 4, 5, 5, 6, 7 ],
+          "SanityPosition": 3,
+          "KnowledgeValues": [ 0, 2, 2, 3, 3, 5, 5, 6, 6 ],
+          "KnowledgePosition": 3
+        }
+      ]
+    },
+    {
+      "Color": "Yellow",
+      "Characters": [
+        {
+          "Name": "Zoe Ingstrom",
+          "Birthday": "05/11/2016",
+          "Color": "Yellow",
+          "SpeedValues": [ 0, 4, 4, 4, 4, 5, 6, 8, 8 ],
+          "SpeedPosition": 4,
+          "MightValues": [ 0, 2, 2, 3, 3, 4, 4, 6, 7 ],
+          "MightPosition": 4,
+          "SanityValues": [ 0, 3, 4, 5, 5, 6, 6, 7, 8 ],
+          "SanityPosition": 3,
+          "KnowledgeValues": [ 0, 1, 2, 3, 4, 4, 5, 5, 5 ],
+          "KnowledgePosition": 3
+        },
+        {
+          "Name": "Missy Dubourde",
+          "Birthday": "02/14/2016",
+          "Color": "Yellow",
+          "SpeedValues": [ 0, 3, 4, 5, 6, 6, 6, 7, 7 ],
+          "SpeedPosition": 3,
+          "MightValues": [ 0, 2, 3, 3, 3, 4, 5, 6, 7 ],
+          "MightPosition": 4,
+          "SanityValues": [ 0, 1, 2, 3, 4, 5, 5, 6, 7 ],
+          "SanityPosition": 3,
+          "KnowledgeValues": [ 0, 2, 3, 4, 4, 5, 6, 6, 6 ],
+          "KnowledgePosition": 4
+        }
+      ]
+    },
+    {
+      "Color": "Blue",
+      "Characters": [
+        {
+          "Name": "Madame Zostra",
+          "Birthday": "12/10/2016",
+          "Color": "Blue",
+          "SpeedValues": [ 0, 2, 3, 3, 5, 5, 6, 6, 7 ],
+          "SpeedPosition": 3,
+          "MightValues": [ 0, 2, 3, 3, 4, 5, 5, 5, 6 ],
+          "MightPosition": 4,
+          "SanityValues": [ 0, 4, 4, 4, 5, 6, 7, 8, 8 ],
+          "SanityPosition": 3,
+          "KnowledgeValues": [ 0, 1, 3, 4, 4, 4, 5, 6, 6 ],
+          "KnowledgePosition": 4
+        },
+        {
+          "Name": "Vivian Lopez",
+          "Birthday": "01/11/2016",
+          "Color": "Blue",
+          "SpeedValues": [ 0, 3, 4, 4, 4, 4, 6, 7, 8 ],
+          "SpeedPosition": 4,
+          "MightValues": [ 0, 2, 2, 2, 4, 4, 5, 6, 6 ],
+          "MightPosition": 3,
+          "SanityValues": [ 0, 4, 4, 4, 5, 6, 7, 8, 8 ],
+          "SanityPosition": 3,
+          "KnowledgeValues": [ 0, 4, 5, 5, 5, 5, 6, 6, 7 ],
+          "KnowledgePosition": 4
+        }
+      ]
+    },
+    {
+      "Color": "Green",
+      "Characters": [
+        {
+          "Name": "Brandon Jaspers",
+          "Birthday": "05/21/2016",
+          "Color": "Green",
+          "SpeedValues": [ 0, 3, 4, 4, 4, 5, 6, 7, 8 ],
+          "SpeedPosition": 3,
+          "MightValues": [ 0, 2, 3, 3, 4, 5, 6, 6, 7 ],
+          "MightPosition": 4,
+          "SanityValues": [ 0, 3, 3, 3, 4, 5, 6, 7, 8 ],
+          "SanityPosition": 4,
+          "KnowledgeValues": [ 0, 1, 3, 3, 5, 5, 6, 6, 7 ],
+          "KnowledgePosition": 3
+        },
+        {
+          "Name": "Peter Akimoto",
+          "Birthday": "09/03/2016",
+          "Color": "Green",
+          "SpeedValues": [ 0, 3, 3, 3, 4, 6, 6, 7, 7 ],
+          "SpeedPosition": 4,
+          "MightValues": [ 0, 2, 3, 3, 4, 5, 5, 6, 8 ],
+          "MightPosition": 3,
+          "SanityValues": [ 0, 3, 4, 4, 4, 5, 6, 6, 7 ],
+          "SanityPosition": 4,
+          "KnowledgeValues": [ 0, 3, 4, 4, 5, 6, 7, 7, 8 ],
+          "KnowledgePosition": 3
+        }
+      ]
+    },
+    {
+      "Color": "Purple",
+      "Characters": [
+        {
+          "Name": "Jenny LeClerc",
+          "Birthday": "03/03/2016",
+          "Color": "Purple",
+          "SpeedValues": [ 0, 2, 3, 4, 4, 4, 5, 6, 8 ],
+          "SpeedPosition": 4,
+          "MightValues": [ 0, 3, 4, 4, 4, 4, 5, 6, 8 ],
+          "MightPosition": 3,
+          "SanityValues": [ 0, 1, 1, 2, 4, 4, 4, 5, 6 ],
+          "SanityPosition": 5,
+          "KnowledgeValues": [ 0, 2, 3, 3, 4, 4, 5, 6, 8 ],
+          "KnowledgePosition": 3
+        },
+        {
+          "Name": "Heather Granville",
+          "Birthday": "08/02/2016",
+          "Color": "Purple",
+          "SpeedValues": [ 0, 3, 3, 4, 5, 6, 6, 7, 8 ],
+          "SpeedPosition": 3,
+          "MightValues": [ 0, 3, 3, 3, 4, 5, 6, 7, 8 ],
+          "MightPosition": 3,
+          "SanityValues": [ 0, 3, 3, 3, 4, 5, 6, 6, 6 ],
+          "SanityPosition": 3,
+          "KnowledgeValues": [ 0, 2, 3, 3, 4, 5, 6, 7, 8 ],
+          "KnowledgePosition": 5
+        }
+      ]
+    }
+  ]
+}

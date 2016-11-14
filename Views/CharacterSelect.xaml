@@ -1,0 +1,72 @@
+﻿<Page
+    x:Class="BaHotHManager.Views.CharacterSelect"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BaHotHManager"
+    xmlns:models="using:BaHotHManager.Models"
+    xmlns:helpers="using:BaHotHManager.Helpers"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Key="CharacterTypeTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+            </Grid>
+        </DataTemplate>
+        <helpers:DateConverter x:Key="DateConverter" />
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <ItemsControl ItemsSource="{x:Bind ViewModel.CharacterTypes}" >
+            <ItemsControl.ItemTemplate>
+                <DataTemplate x:DataType="models:CharacterType">
+                    <ListView x:Name="ColorCharacters" ItemsSource="{x:Bind Characters}" SelectionMode="Multiple" IsMultiSelectCheckBoxEnabled="False" SelectionChanged="ColorCharacters_SelectionChanged">
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="models:Character">
+                                <Border>
+                                    <StackPanel>
+                                        <Image Stretch="Fill" Height="25" />
+                                        <TextBlock>
+                                            <Run Text="{x:Bind Name}" />
+                                        </TextBlock>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <helpers:EqualStackPanel Orientation="Horizontal"></helpers:EqualStackPanel>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+        <ItemsControl ItemsSource="{x:Bind ViewModel.Players}" Grid.Row="1">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate x:DataType="models:Player">
+                    <StackPanel>
+                        <TextBox HorizontalAlignment="Stretch" Text="{x:Bind Name, Mode=TwoWay}"></TextBox>
+                        <Image Stretch="Fill" />
+                        <TextBlock Text="{x:Bind Character.Name}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <helpers:EqualStackPanel Orientation="Horizontal"></helpers:EqualStackPanel>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+        <Button x:Name="StartGameButton" Grid.Row="2" HorizontalAlignment="Center" Click="StartGameButton_Click" >Start Game</Button>
+    </Grid>
+</Page>
