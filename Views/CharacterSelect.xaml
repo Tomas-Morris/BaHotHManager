@@ -33,8 +33,8 @@
                         <ListView.ItemTemplate>
                             <DataTemplate x:DataType="models:Character">
                                 <Border>
-                                    <StackPanel>
-                                        <Image Stretch="Fill" Height="25" />
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Stretch="Fill" Height="25" Width="25"/>
                                         <TextBlock>
                                             <Run Text="{x:Bind Name}" />
                                         </TextBlock>
