@@ -58,10 +58,10 @@ namespace BaHotHManager.ViewModels
         {
             foreach(var player in players)
             {
-                player.Character.SpeedPosition += (byte)speedEffect;
-                player.Character.MightPosition += (byte)mightEffect;
-                player.Character.KnowledgePosition += (byte)knowledgeEffect;
-                player.Character.SanityPosition += (byte)sanityEffect;
+                player.Character.SpeedPosition += (byte)Math.Round(speedEffect);
+                player.Character.MightPosition += (byte)Math.Round(mightEffect);
+                player.Character.KnowledgePosition += (byte)Math.Round(knowledgeEffect);
+                player.Character.SanityPosition += (byte)Math.Round(sanityEffect);
             }
         }
 
